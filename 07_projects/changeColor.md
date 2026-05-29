@@ -29,3 +29,43 @@ buttons.forEach(function (botton) {
 
 ```
 
+## project 2 Solution
+
+```javascript
+const form = document.querySelector('form');
+// const height = parseInt(document.querySelector('#height').value);
+//this access will give you empty valye
+//we need value after submitt
+form.addEventListener('submit', function(event){
+    
+    event.preventDefault();
+    const height = parseInt(document.querySelector('#height').value);
+    const weight = parseInt(document.querySelector('#weight').value); 
+    const result = document.querySelector('#results');
+    const des = document.querySelector('#description');
+
+    if(height === '' || height < 0 || isNaN(height)){
+        result.innerHTML = `please  give avalid height ${height}`;
+    }
+    else if(weight === '' || weight < 0 || isNaN(weight)){
+        result.innerHTML = `please  give avalid height ${weight}`;
+    }
+    else{
+        const bmi = (weight / ((height*height) / 10000)).toFixed(2);
+        results.innerHTML = `<span>${bmi}</span>`;
+        if(bmi < 18.6){
+            description.innerHTML = `<span>Under weight = Less than 18.6</span>`;
+        }
+        else if(bmi < 24.9){
+            description.innerHTML = `<span>Normal range = 18.6 and 24.9</span>`;
+        }
+        else{
+            description.innerHTML = `<span>Overweight = Greater than 24.9</span>`;
+        }
+    }
+    
+})
+
+```
+
+
