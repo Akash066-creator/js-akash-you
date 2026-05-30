@@ -31,6 +31,8 @@ buttons.forEach(function (botton) {
 
 ## project 2 Solution
 
+BMI calculator
+
 ```javascript
 const form = document.querySelector('form');
 // const height = parseInt(document.querySelector('#height').value);
@@ -67,5 +69,20 @@ form.addEventListener('submit', function(event){
 })
 
 ```
+## Project 3 solution
+Digital Clock
+```javascript
+const clock = document.getElementById('clock');
 
+// let date = new Date();
+// console.log(date.toLocaleDateString());
+//1000 milisecond = 1 sec
+const show = document.querySelector('#show');
+show.addEventListener('click',function(e){
+    setInterval(function(){
+    let date = new Date();
+    clock.innerHTML = `${date.toLocaleTimeString()}`;
+    },1000);
+});
 
+```
