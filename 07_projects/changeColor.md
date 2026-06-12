@@ -198,3 +198,85 @@ function newGame(){
     })
 }
 ```
+
+## Project 5
+# press Key and see
+```javascript
+const insert = document.getElementById('insert');
+window.addEventListener('keydown',(e) => {
+    insert.innerHTML = `
+    <div class="color">
+        <table id="table" border="1px" align="center">
+                <tr>
+                    <th>Key</th>
+                    <th>keyCode</th>
+                    <th>code</th>
+                </tr>
+                <tr>
+                    <td>${e.key===" "?"space":e.key}</td>
+                    <td>${e.keyCode}</td>
+                    <td>${e.code}</td>
+                </tr>
+            </table>
+        </div>
+        
+    `
+});
+```
+## Project 6
+# start and stop background color change continuously
+```javascript
+const randomColor = function(){
+    const hex = "0123456789ABCDEF";
+    let color = "#";
+    for(let i = 0; i < 6; i++){
+        color += hex[Math.floor(Math.random()*16)];
+    }
+    return color;
+}
+let intervalId;
+const startChaneColor = function(){
+    const changeColor = function(){
+             document.body.style.backgroundColor = randomColor(); 
+    }
+    if(!intervalId){
+        intervalId = setInterval(changeColor,1000);
+    }
+    
+};
+
+const stoptChaneColor = function(){
+    clearInterval(intervalId);
+    intervalId = null;
+}
+document.querySelector('#start').addEventListener('click',startChaneColor);
+document.querySelector('#stop').addEventListener('click',stoptChaneColor);
+
+
+
+
+
+
+
+
+
+
+
+
+// let intervalId;
+// let i = 0;
+// const color = ["green","blue","red"];
+// const body = document.querySelector('body');
+// document.querySelector('#start').addEventListener('click',function(e){
+//     const changeColor = function () {
+//         body.style.backgroundColor = color[i];
+//         i = (i + 1) % color.length;
+//     }
+    
+//     intervalId = setInterval(changeColor, 2000);
+// });
+
+// document.querySelector('#stop').addEventListener('click',function(e){
+//     clearInterval(intervalId);
+// })
+````
