@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>DOM | Chia aur code</title>
+</head>
+<body style="background-color: #212121;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const div = document.getElementsByClassName('day');
+    const myArray = Array.from(div);
+    myArray.forEach(function(element){
+        element.style.color = '#fff';
+        element.style.fontSize = '20px';
+        element.style.backgroundColor = '#555555';
+        element.style.marginTop = '10px';
+
+
+    });
+
+    const parent = document.querySelector('.parent');
+    console.log(parent);
+    console.log(parent.children);
+    console.log(parent.children[1]);
+    console.log(parent.children[1].innerText);
+    console.log("Nodes : ",parent.childNodes);
+
+</script>
+</html>

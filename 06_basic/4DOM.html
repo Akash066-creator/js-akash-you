@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //-------Adding-----------
+
+//    const li = document.createElement('li');
+   
+//    li.className = "js";
+//    //li.id = "l2";
+//    li.setAttribute('title','Akash','id','l2');
+//    console.log(li);
+
+//    //li.innerText = "Hello Akash";
+//    const addText = document.createTextNode("Hello my darling");
+//    li.appendChild(addText);
+
+//   // document.body.appendChild(li); // it add to body of the page
+
+//   const parent = document.getElementsByClassName('language')[0];
+//   parent.appendChild(li);
+
+//   OR
+//   const parent  = document.querySelector('.langugae');
+//   parent.appendChild(li);
+
+
+//   const find = document.querySelectorAll('ul'); // className => return all lements inside class(html collection) 
+//   //console.log(find); html collection[]
+//   find.forEach(function (l) {
+//     console.log(l);
+    
+    
+//   });
+
+//------using function-------
+
+    function addName(langName){
+        const li = document.createElement('li');
+        li.innerHTML =  `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    
+    addName("React"); 
+    addName("Ruby");
+
+// ------- edit 1 --------
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // const addText = document.createTextNode(" Node js");
+    // secondLang.appendChild(addText);                       // -----React Node Js
+    //secondLang.innerHTML = "Node Js"; //-------- override  => Node Js
+//or
+   //------ make a new list and replace it to targeted list------
+
+    const newli = document.createElement('li');
+    newli.innerHTML = "Mojo";
+    secondLang.replaceWith(newli);
+
+// ------- edit 2 --------
+// ---- change tag (element) ------
+
+  const firstLang = document.querySelector("li:first-child");
+  firstLang.outerHTML = '<li>Next Js</li>';
+
+  //---- remove()-----
+  const lastlang = document.querySelector("li:nth-child(3)");
+  lastlang.remove();
+</script>
+</html>
