@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+<body style="background-color: #414141; color: white;">
+    <h1>Events</h1>
+    <div>
+        <ul id="image">
+            <li><img src="image5.jpg" alt="" id="sound"></li>
+            <!-- <li><img src="download.jpeg" alt="" id="camera" onclick="alert('camera')"> </li> -->
+              <li><img src="download.jpeg" alt="" id="camera"> </li>
+            <li><img src="people.jpg" alt="" id="faison" height="200px" width="150px"> </li>
+            <li><a href="https://www.google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById("camera").onclick = function(){
+    //     alert('hi you are doing well');
+    // }
+
+    // element.addListener('event',function(){},false);
+    // const parent = document.getElementById('image');
+    // parent.addEventListener('click',function(e){
+    //     console.log("parent");
+    // },false);
+
+    // const child = document.getElementById('camera');
+    // child.addEventListener('click',function(e){
+    //     console.log("child");
+    // },false);
+
+    //Link not work
+
+    // const link = document.getElementById('google');
+    // link.addEventListener('click',function(e){
+    //     console.log("google prevented");
+    //     e.preventDefault();
+    // });
+
+    document.querySelector('#image').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+
+        const removeIt = e.target.parentNode;
+        // removeIt.remove();
+        removeIt.parentNode.removeChild(removeIt);
+    });
+
+    
+
+
+</script>
+</html>
